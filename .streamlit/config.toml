@@ -16,5 +16,15 @@ font = "sans serif"
 [server]
 headless = true
 
+# El mapa viaja al navegador como un documento HTML entero, y el 93 % de su peso son
+# coordenadas: texto repetitivo que comprime muy bien. Streamlit trae la compresión
+# apagada de fábrica. Con ella, la capa de UGEL pasa de 0,64 a 0,16 MB y la de distritos
+# de 1,75 a 0,35, cada vez que alguien cambia un filtro y el mapa se redibuja.
+#
+# No acelera nada medible: con ella y sin ella, el mapa tarda unos 5 s en el servidor.
+# Se queda porque gastar la cuarta parte de datos vale por sí solo para quien entre con
+# una conexión lenta, que es buena parte de a quien van dirigidos estos resultados.
+enableWebsocketCompression = true
+
 [browser]
 gatherUsageStats = false
