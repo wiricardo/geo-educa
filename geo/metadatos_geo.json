@@ -1,0 +1,433 @@
+{
+  "generado_por": "ingest/build_geo.py",
+  "fuente": {
+    "nombre": "Peru - Subnational Administrative Boundaries (COD-AB)",
+    "institucion": "OCHA Field Information Services Section",
+    "portal": "https://data.humdata.org/dataset/cod-ab-per",
+    "url_descarga": "https://data.humdata.org/dataset/54fc7f4d-f4c0-4892-91f6-2fe7c1ecf363/resource/63647792-0951-40d2-a30e-4a0e60f7a176/download/per_admin_boundaries.geojson.zip",
+    "licencia": "CC BY-IGO"
+  },
+  "crs": "EPSG:4326 (CRS84, orden longitud/latitud). No se reproyecta nada.",
+  "simplificacion": {
+    "metodo": "shapely.coverage_simplify, progresiva por tamano de unidad",
+    "preserva_topologia": true,
+    "tolerancia_base_grados": 0.002,
+    "niveles_grados": [
+      0.004,
+      0.006,
+      0.008,
+      0.012,
+      0.016,
+      0.02
+    ],
+    "factor_k": 12,
+    "precision_coordenadas_decimales": 4,
+    "vertices_originales": 1598113,
+    "vertices_resultantes": 68972,
+    "error_area_unidad_mediana_pct": 0.497,
+    "error_area_unidad_p95_pct": 1.588,
+    "error_area_unidad_max_pct": 4.932,
+    "error_area_pais_pct": 0.0004
+  },
+  "capas": [
+    {
+      "archivo": "geo/departamentos.geojson",
+      "unidades": 25,
+      "vertices": 17626,
+      "mb": 0.414,
+      "campos": [
+        "ubigeo_dep",
+        "departamento"
+      ],
+      "con_datos_enla": 25
+    },
+    {
+      "archivo": "geo/provincias.geojson",
+      "unidades": 196,
+      "vertices": 30431,
+      "mb": 0.743,
+      "campos": [
+        "ubigeo_prov",
+        "provincia",
+        "departamento"
+      ],
+      "con_datos_enla": 196
+    },
+    {
+      "archivo": "geo/distritos.geojson",
+      "unidades": 1873,
+      "vertices": 68972,
+      "mb": 1.97,
+      "campos": [
+        "ubigeo",
+        "distrito",
+        "departamento",
+        "cod_ugel"
+      ],
+      "con_datos_enla": 1310
+    },
+    {
+      "archivo": "geo/dre.geojson",
+      "unidades": 26,
+      "vertices": 17815,
+      "mb": 0.418,
+      "campos": [
+        "cod_dre",
+        "nom_dre"
+      ],
+      "con_datos_enla": 26
+    },
+    {
+      "archivo": "geo/ugel.geojson",
+      "unidades": 223,
+      "vertices": 29195,
+      "mb": 0.733,
+      "campos": [
+        "cod_ugel",
+        "nom_ugel",
+        "cod_dre",
+        "nom_dre",
+        "n_distritos",
+        "n_unidades_geo"
+      ],
+      "con_datos_enla": 223
+    }
+  ],
+  "campos_omitidos_en_distritos": "provincia (son los cuatro primeros digitos del ubigeo, el nombre esta en provincias.geojson), nom_ugel (esta en ugel.geojson, se cruza por cod_ugel) y cod_dre (esta en ugel.geojson). Se omiten para que la capa quede por debajo de 2 MB.",
+  "cobertura_enla": {
+    "bases": {
+      "4P": "BD_4P ENLA 2025.xlsx",
+      "2S": "BD_2S ENLA 2025.xlsx",
+      "5S": "BD_5S ENLA 2025.xlsx"
+    },
+    "base_relacion_ugel": [
+      "4P",
+      "2S",
+      "5S"
+    ],
+    "distritos_con_datos": 1321,
+    "distritos_con_poligono_propio": 1309,
+    "distritos_dentro_de_unidad_combinada": [
+      "120604",
+      "120606"
+    ],
+    "distritos_representables_en_el_mapa": 1311,
+    "ugel_en_la_capa": 223,
+    "ugel_mencionadas_en_las_tres_bases": 223
+  },
+  "distritos_sin_geometria": [
+    {
+      "ubigeo": "050512",
+      "distrito": "UNIÓN PROGRESO",
+      "provincia": "LA MAR",
+      "departamento": "AYACUCHO",
+      "cod_ugel": "050005",
+      "nom_ugel": "La Mar"
+    },
+    {
+      "ubigeo": "080915",
+      "distrito": "KUMPIRUSHIATO",
+      "provincia": "LA CONVENCIÓN",
+      "departamento": "CUSCO",
+      "cod_ugel": "080009",
+      "nom_ugel": "La Convención"
+    },
+    {
+      "ubigeo": "080917",
+      "distrito": "MANITEA",
+      "provincia": "LA CONVENCIÓN",
+      "departamento": "CUSCO",
+      "cod_ugel": "080014",
+      "nom_ugel": "Pichari-Kimbiri"
+    },
+    {
+      "ubigeo": "080918",
+      "distrito": "UNIÓN ASHÁNINKA",
+      "provincia": "LA CONVENCIÓN",
+      "departamento": "CUSCO",
+      "cod_ugel": "080014",
+      "nom_ugel": "Pichari-Kimbiri"
+    },
+    {
+      "ubigeo": "090724",
+      "distrito": "LAMBRAS",
+      "provincia": "TAYACAJA",
+      "departamento": "HUANCAVELICA",
+      "cod_ugel": "090009",
+      "nom_ugel": "Surcubamba"
+    },
+    {
+      "ubigeo": "090725",
+      "distrito": "COCHABAMBA",
+      "provincia": "TAYACAJA",
+      "departamento": "HUANCAVELICA",
+      "cod_ugel": "090009",
+      "nom_ugel": "Surcubamba"
+    },
+    {
+      "ubigeo": "180107",
+      "distrito": "SAN ANTONIO",
+      "provincia": "MARISCAL NIETO",
+      "departamento": "MOQUEGUA",
+      "cod_ugel": "180001",
+      "nom_ugel": "Mariscal Nieto"
+    },
+    {
+      "ubigeo": "221006",
+      "distrito": "SANTA LUCÍA",
+      "provincia": "TOCACHE",
+      "departamento": "SAN MARTÍN",
+      "cod_ugel": "220010",
+      "nom_ugel": "Tocache"
+    },
+    {
+      "ubigeo": "250306",
+      "distrito": "HUIPOCA",
+      "provincia": "PADRE ABAD",
+      "departamento": "UCAYALI",
+      "cod_ugel": "250003",
+      "nom_ugel": "Padre Abad"
+    },
+    {
+      "ubigeo": "250307",
+      "distrito": "BOQUERÓN",
+      "provincia": "PADRE ABAD",
+      "departamento": "UCAYALI",
+      "cod_ugel": "250003",
+      "nom_ugel": "Padre Abad"
+    }
+  ],
+  "decision_distritos_sin_geometria": "Quedan fuera de la capa de distritos. Son distritos creados despues del 14 de julio de 2020, fecha de validez de la cartografia, separados de un distrito que si esta en la capa. Fusionarlos con su distrito de origen exigiria una tabla de equivalencias que no esta en ninguna fuente del proyecto y mezclaria los indicadores de dos unidades administrativas en un solo poligono, de modo que el valor pintado no seria el de ninguna de las dos. La perdida es solo cartografica: sus estudiantes siguen contando en los agregados por UGEL, DRE y nacionales, que se calculan desde los registros de la ENLA y no desde la geometria.",
+  "unidades_cartograficas_combinadas": [
+    {
+      "unidad": "120699",
+      "nombre_en_la_fuente": "Mazamari - Pangoa",
+      "ubigeos_cubiertos": [
+        "120604",
+        "120606"
+      ],
+      "motivo": "el limite entre los dos distritos esta en litigio y la cartografia oficial no los separa: publica un solo poligono con codigo de distrito 99",
+      "para_pintar_el_mapa": "sumar los datos de los ubigeos cubiertos y atribuirlos a esta unidad"
+    }
+  ],
+  "ugel_de_unidades_combinadas": [
+    {
+      "unidad": "120699",
+      "ubigeos_cubiertos": [
+        "120604",
+        "120606"
+      ],
+      "ugel_asignada": "120010 Pangoa",
+      "por": "120606 con 509 estudiantes",
+      "ugel_descartadas": [
+        "120007 Satipo (243 estudiantes de 120604)"
+      ]
+    }
+  ],
+  "distritos_con_mas_de_una_ugel": [
+    {
+      "ubigeo": "010109",
+      "distrito": "LA JALCA",
+      "ugel_asignada": "010001 Chachapoyas",
+      "estudiantes_asignada": 210,
+      "ugel_descartadas": [
+        {
+          "ugel": "010006 Rodríguez de Mendoza",
+          "estudiantes": 22
+        }
+      ],
+      "empate": false
+    },
+    {
+      "ubigeo": "010502",
+      "distrito": "CAMPORREDONDO",
+      "ugel_asignada": "010005 Luya",
+      "estudiantes_asignada": 240,
+      "ugel_descartadas": [
+        {
+          "ugel": "010007 Utcubamba",
+          "estudiantes": 19
+        }
+      ],
+      "empate": false
+    },
+    {
+      "ubigeo": "100311",
+      "distrito": "MARÍAS",
+      "ugel_asignada": "100008 Leoncio Prado",
+      "estudiantes_asignada": 18,
+      "ugel_descartadas": [
+        {
+          "ugel": "100003 Dos de Mayo",
+          "estudiantes": 15
+        }
+      ],
+      "empate": false
+    },
+    {
+      "ubigeo": "120302",
+      "distrito": "PERENÉ",
+      "ugel_asignada": "120011 Pichanaki",
+      "estudiantes_asignada": 427,
+      "ugel_descartadas": [
+        {
+          "ugel": "120004 Chanchamayo",
+          "estudiantes": 315
+        }
+      ],
+      "empate": false
+    },
+    {
+      "ubigeo": "120606",
+      "distrito": "PANGOA",
+      "ugel_asignada": "120010 Pangoa",
+      "estudiantes_asignada": 473,
+      "ugel_descartadas": [
+        {
+          "ugel": "120014 Río Ene - Mantaro",
+          "estudiantes": 36
+        }
+      ],
+      "empate": false
+    },
+    {
+      "ubigeo": "120608",
+      "distrito": "RÍO TAMBO",
+      "ugel_asignada": "120012 Río Tambo",
+      "estudiantes_asignada": 220,
+      "ugel_descartadas": [
+        {
+          "ugel": "120014 Río Ene - Mantaro",
+          "estudiantes": 54
+        },
+        {
+          "ugel": "120010 Pangoa",
+          "estudiantes": 8
+        }
+      ],
+      "empate": false
+    },
+    {
+      "ubigeo": "130101",
+      "distrito": "TRUJILLO",
+      "ugel_asignada": "130016 03 - Trujillo Nor Oeste",
+      "estudiantes_asignada": 1213,
+      "ugel_descartadas": [
+        {
+          "ugel": "130017 04 - Trujillo Sur Este",
+          "estudiantes": 1118
+        },
+        {
+          "ugel": "130015 02 - La Esperanza",
+          "estudiantes": 19
+        }
+      ],
+      "empate": false
+    },
+    {
+      "ubigeo": "130104",
+      "distrito": "HUANCHACO",
+      "ugel_asignada": "130016 03 - Trujillo Nor Oeste",
+      "estudiantes_asignada": 173,
+      "ugel_descartadas": [
+        {
+          "ugel": "130015 02 - La Esperanza",
+          "estudiantes": 127
+        }
+      ],
+      "empate": false
+    },
+    {
+      "ubigeo": "130601",
+      "distrito": "OTUZCO",
+      "ugel_asignada": "130007 Otuzco",
+      "estudiantes_asignada": 175,
+      "ugel_descartadas": [
+        {
+          "ugel": "130014 01 - El Porvenir",
+          "estudiantes": 23
+        }
+      ],
+      "empate": false
+    },
+    {
+      "ubigeo": "131003",
+      "distrito": "CACHICADÁN",
+      "ugel_asignada": "130011 Santiago de Chuco",
+      "estudiantes_asignada": 52,
+      "ugel_descartadas": [
+        {
+          "ugel": "130010 Sánchez Carrión",
+          "estudiantes": 8
+        }
+      ],
+      "empate": false
+    },
+    {
+      "ubigeo": "150731",
+      "distrito": "SANTO DOMINGO DE LOS OLLEROS",
+      "ugel_asignada": "150201 08 Cañete",
+      "estudiantes_asignada": 135,
+      "ugel_descartadas": [
+        {
+          "ugel": "150208 15 Huarochirí",
+          "estudiantes": 29
+        }
+      ],
+      "empate": false
+    },
+    {
+      "ubigeo": "170203",
+      "distrito": "MADRE DE DIOS",
+      "ugel_asignada": "170001 Tambopata",
+      "estudiantes_asignada": 230,
+      "ugel_descartadas": [
+        {
+          "ugel": "170002 Manu",
+          "estudiantes": 118
+        }
+      ],
+      "empate": false
+    },
+    {
+      "ubigeo": "220203",
+      "distrito": "BAJO BIAVO",
+      "ugel_asignada": "220002 Bellavista",
+      "estudiantes_asignada": 79,
+      "ugel_descartadas": [
+        {
+          "ugel": "220007 Picota",
+          "estudiantes": 67
+        }
+      ],
+      "empate": false
+    },
+    {
+      "ubigeo": "220506",
+      "distrito": "PINTO RECODO",
+      "ugel_asignada": "220004 Lamas",
+      "estudiantes_asignada": 68,
+      "ugel_descartadas": [
+        {
+          "ugel": "220001 Moyobamba",
+          "estudiantes": 37
+        }
+      ],
+      "empate": false
+    }
+  ],
+  "decision_distritos_con_mas_de_una_ugel": "Se asigna la UGEL con mas estudiantes en la base de 4.o de primaria. Si hubiera empate se desempata por el menor codigo de UGEL, para que el resultado no dependa del orden de las filas de la base.",
+  "dre": {
+    "unidades": 26,
+    "regla": "26 DRE sobre 25 departamentos: Lima se parte en Lima Metropolitana (provincia 1501) y Lima Provincias (el resto); Callao es DRE propia (0701). La capa sigue el territorio.",
+    "excepciones_respecto_de_la_enla": [
+      {
+        "ubigeo": "200706",
+        "dre_enla": "2400 Tumbes",
+        "dre_territorial": "2000",
+        "estudiantes": 245
+      }
+    ]
+  },
+  "nota_sobre_nombres": "Los nombres de departamento, provincia y distrito son los de la fuente cartografica y vienen sin tilde en varios casos (Ancash, Apurimac, Junin). Para mostrar en pantalla conviene usar los nombres de la ENLA, que si las llevan, cruzando por ubigeo."
+}

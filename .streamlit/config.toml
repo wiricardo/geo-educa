@@ -1,0 +1,20 @@
+# Tema Bosque. Los valores aquí y los de app/core/theme.py son los dos únicos sitios
+# donde vive la identidad visual.
+#
+# Solo hay dos fondos: backgroundColor es el de la página entera, y el verde de la
+# navegación se apoya encima. Un tercer tono por detrás del panel verde delataba su caja
+# en lugar de dejar que flotara sobre la página.
+
+[theme]
+base = "dark"
+primaryColor = "#99D8B6"
+backgroundColor = "#18201D"
+secondaryBackgroundColor = "#202A26"
+textColor = "#E5EEE8"
+font = "sans serif"
+
+[server]
+headless = true
+
+[browser]
+gatherUsageStats = false

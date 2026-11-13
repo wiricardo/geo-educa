@@ -1,0 +1,42 @@
+# Datos de origen. No se versionan: son públicos y se descargan de la fuente.
+# Ver FUENTES.md para el detalle de qué va en cada carpeta y de dónde se obtiene.
+/DATA/
+/CONTEXT/
+
+# Datos derivados del pipeline de ingesta
+/processed/*
+*.duckdb
+*.duckdb.wal
+*.parquet
+
+# El almacén es la excepción, y va al final para que gane sobre las reglas de arriba.
+# El servicio que publica la aplicación clona este repositorio y no tiene los microdatos
+# para reconstruirlo, así que sin el archivo la aplicación arranca y no muestra cifras.
+!/processed/geoeduca.duckdb
+
+# Geometrías descargadas y sus intermedios
+/geo/raw/
+/geo/*.zip
+/geo/*.gpkg
+
+# Entorno virtual
+.venv/
+venv/
+
+# Secretos y configuración local
+.streamlit/secrets.toml
+.env
+*.key
+
+# Python
+__pycache__/
+*.py[cod]
+*.egg-info/
+.pytest_cache/
+.ipynb_checkpoints/
+
+# Sistema operativo y editores
+.DS_Store
+.vscode/
+.idea/
+.claude/
