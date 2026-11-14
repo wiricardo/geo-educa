@@ -250,8 +250,9 @@ columna que manda.
 | Huarmaca | Piura | 71,6 % | 719 | 515 |
 
 **El punto de la pantalla:** Yurimaguas tiene el porcentaje más bajo de las ocho pero el
-mayor número de estudiantes, así que concentra más estudiantes en niveles críticos que ninguna
-otra UGEL del país. Si la lista se ordena por porcentaje cae al octavo lugar y
+mayor número de estudiantes, así que concentra más estudiantes en niveles críticos que
+ninguna otra de las ocho. En el país es la 14.ª, por detrás de UGEL de Lima y de Maynas
+que tienen mucho más alumnado aunque su porcentaje sea menor. Si la lista se ordena por porcentaje cae al octavo lugar y
 probablemente no entra al programa. El diseño tiene que dejar ver esa tensión entre
 porcentaje y volumen, no esconderla.
 

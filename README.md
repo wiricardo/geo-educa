@@ -2,8 +2,9 @@
 
 Plataforma para explorar los resultados de la **ENLA 2025**, la Evaluación Nacional de
 Logros de Aprendizaje que la Oficina de Medición de la Calidad de los Aprendizajes (UMC)
-del Ministerio de Educación del Perú aplicó a 247 668 estudiantes de 4.º de primaria y
-2.º y 5.º de secundaria.
+del Ministerio de Educación del Perú aplicó a 248 294 estudiantes de 4.º de primaria y
+2.º y 5.º de secundaria. Las bases publicadas traen 247 668 con medida válida, que son
+los que analiza esta plataforma.
 
 Los microdatos de la evaluación son públicos, pero llegan en bases con pesos muestrales,
 estratos y conglomerados. Para leerlas hace falta saber de muestreo complejo, y eso deja
@@ -115,7 +116,7 @@ asistente se ofrece a moverlos. Nunca lo hace sin que se lo acepten.
 ## Cómo está hecho
 
 Todas las cifras se calculan con los pesos del diseño muestral. Las que la UMC publica
-se usan como control: el almacén trae 34 comprobaciones contra las cifras oficiales y
+se usan como control: el almacén trae 35 comprobaciones contra las cifras oficiales y
 de coherencia interna, y el mayor desvío es de 0,05 puntos porcentuales, que es
 redondeo.
 
@@ -127,7 +128,7 @@ redondeo.
 | Análisis espacial | Índice de Moran y conglomerados locales, contigüidad Queen |
 | Geometrías | Fronteras administrativas del Perú publicadas por OCHA |
 | Interfaz | Streamlit, Plotly y Folium |
-| Pruebas | 191, contra el paquete `survey` de R en lo que toca al muestreo |
+| Pruebas | 198, contra el paquete `survey` de R en lo que toca al muestreo |
 
 ## Ponerlo a andar
 

@@ -63,13 +63,13 @@ st.markdown("<div style='height:22px'></div>", unsafe_allow_html=True)
 cp.igualar_tarjetas()
 col_a, col_b, col_c, col_d = st.columns(4, gap="medium")
 with col_a:
-    cp.tarjeta_metrica("Estudiantes", "247 668", "Evaluados por la UMC en 2025")
+    cp.tarjeta_metrica("Estudiantes", "247 668", "Con resultado en los tres grados")
 with col_b:
-    cp.tarjeta_metrica("Distritos", "1 321", "Con resultados en el mapa")
+    cp.tarjeta_metrica("Distritos", "1 321", "Con al menos una escuela")
 with col_c:
-    cp.tarjeta_metrica("Controles", "34", "Contra las cifras que publica la UMC")
+    cp.tarjeta_metrica("Controles", "35", "Contra las cifras que publica la UMC")
 with col_d:
-    cp.tarjeta_metrica("Pruebas", "191", "Que corren con cada cambio")
+    cp.tarjeta_metrica("Pruebas", "198", "Que corren con cada cambio")
 
 
 # 2. Las seis secciones, en lista y no en un párrafo ----------------------------------

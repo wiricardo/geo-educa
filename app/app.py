@@ -106,7 +106,7 @@ def bienvenida() -> None:
     st.markdown(
         """
 Resultados de la **ENLA 2025**, la evaluación que la UMC del Ministerio de Educación
-aplicó a 247 668 estudiantes de tres grados en todo el Perú. Las cifras están
+aplicó a 248 294 estudiantes de tres grados en todo el Perú. Las cifras están
 ponderadas con el diseño muestral y coinciden con las oficiales.
         """
     )
