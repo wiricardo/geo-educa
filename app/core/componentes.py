@@ -105,9 +105,18 @@ def barra_superior() -> None:
         )
 
     with col_area:
-        # Al cambiar de grado puede quedar guardada un área que el nuevo no evalúa, y un
-        # selectbox cuyo valor no está entre sus opciones falla. Se corrige antes de
-        # dibujarlo, que es cuando todavía se puede escribir en el estado.
+        # El área también se cambia desde fuera, cuando el asistente mueve la vista, así
+        # que necesita seguir al filtro igual que el grado. Sin esta línea el control
+        # conservaba su valor viejo y la llamada a `actualizar` de más abajo lo escribía
+        # encima de lo que se acababa de pedir: pedirle al asistente otro grado funcionaba
+        # y pedirle otra área se deshacía sin decir nada.
+        estado.sembrar("sel_area", "area")
+
+        # Va después de sembrar, no antes: primero el control se pone al día con el
+        # filtro y luego se comprueba si esa área existe para el grado. Al cambiar de
+        # grado puede quedar guardada un área que el nuevo no evalúa, y un selectbox cuyo
+        # valor no está entre sus opciones falla. Se corrige antes de dibujarlo, que es
+        # cuando todavía se puede escribir en el estado.
         areas = config.areas_de(grado)
         if st.session_state.get("sel_area") not in areas:
             st.session_state["sel_area"] = f.area if f.area in areas else "M"
